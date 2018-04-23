@@ -1,0 +1,6 @@
+server:
+  port: 8081
+  context-path: /blog
+person:
+  height: 172
+  age: 18
