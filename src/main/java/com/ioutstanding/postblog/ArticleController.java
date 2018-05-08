@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin
@@ -23,5 +24,17 @@ public class ArticleController {
     @GetMapping(value = "api/v1/articles/{id}")
     public Article articleFindById(@PathVariable(value = "id") Integer id) {
         return articleRepository.findById(id).get();
+    }
+
+    @GetMapping(value = "api/v1/categories")
+    public List<String> categories() {
+        List<Article> allArticles = articleRepository.findAll();
+        List<String> result = new ArrayList<String>();
+        for (int i = 0; i < allArticles.size(); ++i) {
+            result.add(allArticles.get(i).getCategory());
+        }
+
+        return result;
+
     }
 }

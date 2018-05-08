@@ -19,7 +19,7 @@ public class Article {
 
     private String category;
 
-    //private List<String> labelList;
+    private String tags;
 
     private String body;
 
@@ -61,6 +61,14 @@ public class Article {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 
     public String getBody() {
