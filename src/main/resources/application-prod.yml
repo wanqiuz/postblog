@@ -1,6 +1,5 @@
 server:
-  port: 80
-  address: 47.98.208.0
+  port: 8081
 person:
   height: 172
   age: 18
